@@ -4,12 +4,19 @@
  */
 
 CKEDITOR.editorConfig = function( config ) {
-	//config.uiColor = '#DDDDDD';
+	config.extraPlugins = 'colorbutton,colordialog';
+	
 	config.toolbar = [
 	{ name: 'custom', items: ["formatVHDL"] },
-	{ name: 'clipboard', items: ["Cut", "Copy", "Paste"] },
-	{ name: 'insert', items: ["Table", "-", "HorizontalRule", "Special Char"] },
-	{ name: 'paragraph', items: ["Indent", "-", "Outdent"]},
-	{ name: 'tools', items: ["Maximize"] }
-	]
+	{ name: 'clipboard', items: ["Cut", "Copy", "Paste", "Undo", "Redo"] },
+	{ name: 'insert', items: ["Table", "-", "HorizontalRule", "SpecialChar"] },
+	{ name: 'paragraph', items: ["Indent", "Outdent", "-", "TextColor", "BGColor"] },
+	{ name: 'tools', items: ["Maximize", "Source"] }
+	];
+
+	config.extraPlugins = 'colorbutton,colordialog';
+
+	config.font_names = "Verdana";
+	config.enterMode = CKEDITOR.ENTER_BR;
+	
 };
