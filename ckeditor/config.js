@@ -7,10 +7,9 @@ CKEDITOR.editorConfig = function( config ) {
 	config.extraPlugins = 'colorbutton,colordialog';
 	
 	config.toolbar = [
-	{ name: 'custom', items: ["formatVHDL"] },
+	{ name: 'custom', items: ["formatVHDL", "formatASSEMBLY"] },
 	{ name: 'clipboard', items: ["Cut", "Copy", "Paste", "Undo", "Redo"] },
-	{ name: 'insert', items: ["Table", "-", "HorizontalRule", "SpecialChar"] },
-	{ name: 'paragraph', items: ["Indent", "Outdent", "-", "TextColor", "BGColor"] },
+	{ name: 'paragraph', items: ["Indent", "Outdent", "Table", "Font", "TextColor", "BGColor"] },
 	{ name: 'tools', items: ["Maximize", "Source"] }
 	];
 
@@ -18,5 +17,6 @@ CKEDITOR.editorConfig = function( config ) {
 
 	config.font_names = "Verdana";
 	config.enterMode = CKEDITOR.ENTER_BR;
+	config.height = 400;
 	
 };
