@@ -1,6 +1,6 @@
 isLetter = (ch)=>((ch >= 65 && ch <= 90) || (ch >= 97 && ch <= 122));
 function addRed(text) {
-	var i, char, charId, lastWord = "", replacing, word, color, closing, mode = 0, reds = ["library", "use", "entity", "is", "port", "architecture", "signal", "of", "in", "inout", "out", "generic", "map", "when", "begin", "end", "else", "or", "and", "nor", "not", "downto", "to", "range"], blues = ["std_logic_vector", "std_logic", "inst_type"];
+	var i, char, charId, lastWord = "", replacing, word, color, closing, mode = 0, reds = ["library", "use", "entity", "if", "then", "process", "is", "port", "architecture", "signal", "of", "in", "inout", "out", "generic", "map", "when", "begin", "end", "else", "or", "and", "nor", "not", "downto", "to", "range"], blues = ["std_logic_vector", "std_logic", "inst_type"];
 	for (i = text.indexOf('>') + 1; (i < text.length); i++) {
 		char = text.charAt(i);
 		charId = text.charCodeAt(i);
@@ -192,6 +192,10 @@ function clearHTML(text) {
     newText = continousReplace(newText, '&lt;', /</g);
     newText = continousReplace(newText, '&gt;', />/g);*/
 	newText = continousReplace(newText, '\n', '<br>');
+	newText = continousReplace(newText, 'clock\'event', 'alkyaemgr');
+	newText = continousReplace(newText, 'clock\'EVENT', 'alkyaemgr');
+	newText = continousReplace(newText, 'clk\'event', 'alkyaem2gr');
+	newText = continousReplace(newText, 'clk\'EVENT', 'alkyaem2gr');
 	return newText;
 }
 function addDarkRed(text) {
@@ -259,7 +263,9 @@ function addDarkRed(text) {
 	}
 	return text;
 }
-function formatPort(text) {
+function formatClockEvent(text) {
+	text = continousReplace(text, 'alkyaemgr', 'clock\''+"<span style='color:#ff0000'>event</span>");
+	text = continousReplace(text, 'alkyaem2gr', 'clk\''+"<span style='color:#ff0000'>event</span>");
 	return text;
 }
 function assemblyTags(text) {

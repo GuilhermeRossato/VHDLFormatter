@@ -13,7 +13,7 @@ window.addEventListener("load", function() {
     	data = addBlueNGreen(data);
     	data = addRed(data);
     	data = addDarkRed(data);
-    	data = formatPort(data);
+    	data = formatClockEvent(data);
     	edt.setData(data);
     } } );
     editor.addCommand("format_assembly", {
